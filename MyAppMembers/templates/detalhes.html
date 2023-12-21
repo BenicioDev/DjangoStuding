@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{{ mymember.firstname }} {{ mymember.lastname }}</title>
-</head>
-<body>
+{% block title %}
+<title>{{ mymember.firstname }} {{ mymember.lastname }}</title>
+{% endblock %}
+
+
+{% block content %}
 
 <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
-  
+
 <p>Telefone: {{ mymember.telefone }}</p>
 <p>Membro desde: {{ mymember.data_entrada }}</p>
 
 <hr>
 
-<p>Volte para <a href="/membros">MEMBROS</a></p>
+<p>Volte para <a href="/membros">membros</a></p>
 
-</body>
-</html>       
+{% endblock %}
+
+    
