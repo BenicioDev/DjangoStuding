@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Membros do Clube</h1>
+  
+<ul>
+  {% for x in myMembers %}
+    <li>
+        {{ x.firstname }} 
+        {{ x.lastname }} || 
+        {{ x.telefone }} || 
+        {{ x.data_entrada }}
+    </li>
+    <hr>
+  {% endfor %}
+</ul>
+
+</body>
+</html>

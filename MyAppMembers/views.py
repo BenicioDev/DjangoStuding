@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.template import loader
+from .models import Membros
 
-def home (request):
-    template1 = loader.get_template('index.html')
-    return HttpResponse(template1.render())
+def membros (request):
+    myMembers = Membros.objects.all().values()
+    myTemplate = loader.get_template('lista_membros.html')
+    context = {'myMembers': myMembers}
 
-# Create your views here.
+    return HttpResponse(myTemplate.render(context, request))
