@@ -8,3 +8,9 @@ def membros (request):
     context = {'myMembers': myMembers}
 
     return HttpResponse(myTemplate.render(context, request))
+
+def detalhes (request, id):
+    mymember = Membros.objects.get(id=id)
+    template = loader.get_template('detalhes.html')
+    context = {'mymember': mymember}
+    return HttpResponse(template.render(context, request))
